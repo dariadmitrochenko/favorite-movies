@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 import React from 'react';
 import logo from '../logo.svg';
 import '../App.css';
 import MovieCardsList from './MovieCardsList';
+=======
+import React, { Component } from "react";
+import "../App.css";
+import logo from "../logo.svg";
+>>>>>>> ab457c5f791f7e711d313d7a7757353e0789ab39
 
 const profiles = [
   {
     id: 1,
+<<<<<<< HEAD
     userID: '1',
     favoriteMovieID: '1',
   },
@@ -34,11 +41,42 @@ const profiles = [
     userID: '6',
     favoriteMovieID: '4',
   },
+=======
+    userID: "1",
+    favoriteMovieID: "1"
+  },
+  {
+    id: 2,
+    userID: "2",
+    favoriteMovieID: "1"
+  },
+  {
+    id: 3,
+    userID: "4",
+    favoriteMovieID: "5"
+  },
+  {
+    id: 4,
+    userID: "5",
+    favoriteMovieID: "2"
+  },
+  {
+    id: 5,
+    userID: "3",
+    favoriteMovieID: "5"
+  },
+  {
+    id: 6,
+    userID: "6",
+    favoriteMovieID: "4"
+  }
+>>>>>>> ab457c5f791f7e711d313d7a7757353e0789ab39
 ];
 
 const users = {
   1: {
     id: 1,
+<<<<<<< HEAD
     name: 'Jane Jones',
     userName: 'coder',
   },
@@ -67,11 +105,42 @@ const users = {
     name: 'Nicholas Lain',
     userName: 'user123',
   },
+=======
+    name: "Jane Cruz",
+    userName: "coder"
+  },
+  2: {
+    id: 2,
+    name: "Matthew Johnson",
+    userName: "mpage"
+  },
+  3: {
+    id: 3,
+    name: "Autumn Green",
+    userName: "user123"
+  },
+  4: {
+    id: 3,
+    name: "John Doe",
+    userName: "user123"
+  },
+  5: {
+    id: 5,
+    name: "Lauren Carlson",
+    userName: "user123"
+  },
+  6: {
+    id: 6,
+    name: "Nicholas Lain",
+    userName: "user123"
+  }
+>>>>>>> ab457c5f791f7e711d313d7a7757353e0789ab39
 };
 
 const movies = {
   1: {
     id: 1,
+<<<<<<< HEAD
     name: 'Planet Earth 1',
   },
   2: {
@@ -109,5 +178,74 @@ const App = () => {
     </div>
   );
 };
+=======
+    name: "Planet Earth"
+  },
+  2: {
+    id: 2,
+    name: "Selma"
+  },
+  3: {
+    id: 3,
+    name: "Million Dollar Baby"
+  },
+  4: {
+    id: 4,
+    name: "Forrest Gump"
+  },
+  5: {
+    id: 5,
+    name: "Get Out"
+  }
+};
+
+class App extends Component {
+  render() {
+    /*Return JSX*/
+    return (
+      /*
+      Without this '(', JS will automatically put a ';' after the `return`
+      keyword.
+      */
+      <div>
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">ReactND - Coding Practice</h1>
+        </header>
+        <ul>
+          <h2>Favorite Movies</h2>
+
+          {/*
+          For each object in the profiles array, make a list of JSX elements.
+          The map function returns a new array, which will
+          only have list elements in it. React will automatically know how to
+          render an array of JSX objects.
+          */}
+          {profiles.map(profile => {
+            const userName = users[profile.userID].name;
+            const favMovieName = movies[profile.favoriteMovieID].name;
+
+            return (
+              /*
+              You need to include the `key` property every time you create list
+              elements in React. The key property is necessary because it enables
+              React to perform reconciliation
+              (https://reactjs.org/docs/reconciliation.html)
+              */
+              <li key={profile.id}>
+                {/* If the syntax below looks unfamiliar, please take the following
+              course:
+              https://www.udacity.com/course/es6-javascript-improved--ud356
+                */}
+                <p>{`${userName}\'s favorite movie is "${favMovieName}."`}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  }
+}
+>>>>>>> ab457c5f791f7e711d313d7a7757353e0789ab39
 
 export default App;
